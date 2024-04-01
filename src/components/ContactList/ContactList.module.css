@@ -1,0 +1,17 @@
+ul,
+li {
+    list-style: none;
+}
+
+.contactList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.contact {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 5px 10px;
+    width: 150px;
+}
