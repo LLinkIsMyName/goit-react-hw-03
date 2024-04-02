@@ -21,8 +21,9 @@ const ContactForm = ({ addContact }) => {
       .required('Required'),
   });
 
-  const onSubmit = (values, { resetForm }) => {
-     addContact(values, { resetForm });
+  const onSubmit = async (values, { resetForm }) => {
+    await addContact(values);
+    resetForm();
   };
 
   const nameFieldId = useId();
