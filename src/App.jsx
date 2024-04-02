@@ -19,19 +19,14 @@ function App() {
         ]
   );
 
-  const handleFilterChange = (value) => {
-    setFilter(value);
-  };
   useEffect(() => {
     localStorage.setItem(LS_KEY, JSON.stringify(contacts));
   }, [contacts]);
 
-  const addContact = (values, actions) => {
+  const addContact = (values) => {
     const id = nanoid();
     const newContact = { ...values, id };
     setContacts((prevContacts) => [...prevContacts, newContact]);
-      actions.resetForm();
-       
   };
 
   const deleteContact = (contactId) => {
@@ -41,6 +36,10 @@ function App() {
   };
 
   const [filter, setFilter] = useState("");
+
+  const handleFilterChange = (value) => {
+    setFilter(value);
+  };
 
   const filteredContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
